@@ -1,213 +1,430 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+/* GLOBAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* GLOBAL */
-html {
-    font-size: 18px;
-    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #fdf6ec;
-    color: #3a3a3a;
-    line-height: 1.7;
-    overflow-x: hidden;
+    background-color: #ffffff;
+    color: #1e293b; /* Deep crisp slate for readability */
+    line-height: 1.65;
 }
 
-/* HEADER */
+/* BRANDING & ACCENTS */
+.accent {
+    color: #0284c7; /* Sky corporate blue */
+}
+
+.text-gradient {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #f0fdf4; /* Very soft light green background tint */
+    color: #166534; /* Professional dark forest green */
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    border: 1px solid #dcfce7;
+}
+
+/* NAVIGATION HEADER */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1rem 9%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fdf6ec;
+    padding: 18px 10%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f1f5f9;
     z-index: 100;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #8b6f47;
+    letter-spacing: -0.3px;
+    color: #0f172a;
 }
 
-/* NAV */
 nav a {
-    font-size: 1rem;
-    margin-left: 2.5rem;
-    color: #3a3a3a;
+    margin-left: 32px;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.95rem;
     font-weight: 500;
-    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease;
 }
 
-nav a:hover,
-nav a.active {
-    color: #b45309;
-    border-bottom: 2px solid #b45309;
+nav a:hover {
+    color: #0f172a;
 }
 
-/* SECTIONS */
+/* SECTION ARCHITECTURE */
 .section {
-    padding: 80px 12%;
+    max-width: 1050px;
+    margin: auto;
+    padding: 140px 10% 60px 10%;
 }
-
-#home {
-    padding-top: 140px;
-}
-
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-}
-
-h3 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 35px;
 }
 
 p {
-    max-width: 650px;
+    color: #475569;
+    font-size: 1rem;
+    margin-bottom: 18px;
 }
 
-/* HOME */
+strong {
+    color: #0f172a;
+}
+
+/* HOME DESIGN */
 .home {
     display: flex;
     align-items: center;
-    gap: 6rem;
+    justify-content: space-between;
+    min-height: 80vh;
+    gap: 50px;
+}
+
+.home-text {
+    flex: 1.2;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: #475569;
+    max-width: 540px;
 }
 
 .home-img img {
-    width: 320px;
-    border-radius: 50%;
-    transition: 0.3s ease;
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 24px; /* Sleek rounded-square frames instead of basic circles */
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
-.home-img img:hover {
-    transform: scale(1.05);
+/* SOCIAL PLATFORMS */
+.socials {
+    margin-top: 30px;
 }
 
-span {
-    color: #b45309;
+.socials a {
+    margin-right: 20px;
+    font-size: 22px;
+    color: #94a3b8;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
-.typing-text {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+.socials a:hover {
+    color: #0f172a;
+    transform: translateY(-2px);
 }
 
-.typing-text span::before {
-    content: "Computer Science Student";
-    animation: rotateWords 15s infinite;
-    color: #b45309;
+/* PREMIUM PROJECT CARDS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 10px;
 }
 
-@keyframes rotateWords {
-    0%, 33% { content: "Computer Science Student"; }
-    34%, 66% { content: "Cybersecurity Enthusiast"; }
-    67%, 100% { content: "AI Enthusiast"; }
+.project-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* SOCIAL ICONS */
-.social-icons a {
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #b45309;
+.project-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    transform: translateY(-4px);
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.project-icon {
+    font-size: 1.5rem;
+    color: #0284c7;
+}
+
+.repo-link {
+    color: #94a3b8;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+
+.repo-link:hover {
+    color: #0f172a;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* SKILLS SECTION */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.skills-category h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tags span {
+    background: #ffffff;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* CERTIFICATIONS SECTION */
+.certifications-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    padding: 20px 24px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: border-color 0.2s ease;
+}
+
+.cert-card:hover {
+    border-color: #cbd5e1;
+}
+
+.cert-icon {
+    font-size: 1.5rem;
+    color: #0284c7; /* Matches your sky blue accent */
+    background: #f0f9ff;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-info h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.cert-issuer {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.cert-date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+@media(max-width: 480px) {
+    .cert-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* EDUCATION DESIGN */
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-card {
+    padding: 24px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.date-badge {
+    font-size: 0.8rem;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.degree {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* CONTACT CTA INTERFACE */
+.contact-section {
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 60px 40px;
+    margin-bottom: 80px;
+    border: 1px solid #f1f5f9;
+}
+
+.contact-section p {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.contact-methods {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 15px;
-    color: #b45309;
-    transition: 0.3s ease;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.social-icons a:hover {
-    background: #b45309;
-    color: #fff;
+.contact-btn {
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
 }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 0.8rem 2.2rem;
-    border-radius: 30px;
-    border: 2px solid #b45309;
-    color: #b45309;
-    font-weight: 600;
+.phone-btn {
+    background: transparent;
+    color: #475569;
+    border: 1px solid #cbd5e1;
 }
 
-.btn:hover {
-    background: #b45309;
-    color: #fff;
+.phone-btn:hover {
+    color: #0f172a;
+    border-color: #0f172a;
 }
 
-/* SKILLS */
-.skills-list {
-    list-style: none;
-    max-width: 600px;
+.email-btn {
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid #0f172a;
 }
 
-.skills-list li {
-    font-size: 1.2rem;
-    margin: 14px 0;
-    padding-left: 18px;
-    position: relative;
+.email-btn:hover {
+    background: #334155;
+    border-color: #334155;
 }
 
-.skills-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #b45309;
-}
-
-/* EDUCATION */
-.education-item {
-    margin-bottom: 2rem;
-}
-
-.education-item p {
-    opacity: 0.85;
-}
-
-/* CONTACT */
-#contact p {
-    font-size: 1.2rem;
-    margin: 14px 0;
-}
-
-#contact strong {
-    color: #b45309;
-}
-
-#contact a {
-    color: #3a3a3a;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* MOBILE ADAPTATION */
+@media(max-width: 768px) {
     .home {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
+        padding-top: 140px;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    .subtitle {
+        margin: auto;
     }
 
     nav {
